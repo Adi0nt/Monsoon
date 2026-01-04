@@ -4,9 +4,9 @@ end
 getgenv().AoInjected = true
 
 local repo = "https://raw.githubusercontent.com/deividcomsono/Obsidian/main/"
-local Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
-local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
-local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"))()
+local Library = loadstring(game:HttpGet(repo .. "Library.lua"), "1")()
+local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"), "2")()
+local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"), "3")()
 
 local Version = "1.0.0a"
 
@@ -70,11 +70,11 @@ local enemiesFolder = Workspace:WaitForChild("Enemies")
 local ModulesFolder = RS:WaitForChild("Modules")
 
 -- Modules
-local MagicModule = require(ModulesFolder.Magic)
-local MeleeModule = require(ModulesFolder.Melee)
-local BasicModule = require(ModulesFolder.Basic)
-local AttackClientModule = require(ModulesFolder.AttackClient)
-local InventoryModule = require(ModulesFolder.Inventory)
+local MagicModule = require(ModulesFolder:WaitForChild("Magic"))
+local MeleeModule = require(ModulesFolder:WaitForChild("Melee"))
+local BasicModule = require(ModulesFolder:WaitForChild("Basic"))
+local AttackClientModule = require(ModulesFolder:WaitForChild("AttackClient"))
+local InventoryModule = require(ModulesFolder:WaitForChild("Inventory"))
 
 -- State Variables
 local teleportDebounce = false
