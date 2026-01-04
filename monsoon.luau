@@ -8,7 +8,7 @@ local Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
 local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
 local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"))()
 
-local Version = "v1.0.0 [FREE]"
+local Version = "1.0.0a"
 
 -- Create Notification --
 --local Notifier = Library.newNotify()
@@ -19,7 +19,7 @@ local Version = "v1.0.0 [FREE]"
 -- Creating Window --
 local Window = Library:CreateWindow({
 	Title = "Monsoon [F]",
-	Footer = "version: 1.0.0",
+	Footer = "version: 1.0.0a",
 	Icon = 6956634044,
 	NotifySide = "Right",
 })
@@ -46,13 +46,13 @@ local WatermarkConnection = game:GetService("RunService").RenderStepped:Connect(
 end)
 
 -- Services
-local Workspace = cloneref(game:GetService("Workspace"))
-local Lighting = cloneref(game:GetService("Lighting"))
-local Players = cloneref(game:GetService("Players"))
-local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"))
-local UserInputService = cloneref(game:GetService("UserInputService"))
-local RunService = cloneref(game:GetService("RunService"))
-local StarterGui = cloneref(game:GetService("StarterGui"))
+local Workspace = (game:GetService("Workspace"))
+local Lighting = (game:GetService("Lighting"))
+local Players = (game:GetService("Players"))
+local ReplicatedStorage = (game:GetService("ReplicatedStorage"))
+local UserInputService = (game:GetService("UserInputService"))
+local RunService = (game:GetService("RunService"))
+local StarterGui = (game:GetService("StarterGui"))
 
 -- Core Objects
 local LocalPlayer = Players.LocalPlayer
@@ -67,12 +67,14 @@ local Remotes = RS:WaitForChild("Remotes")
 local TeleportBind = Instance.new("BindableFunction")
 local enemiesFolder = Workspace:WaitForChild("Enemies")
 
+local ModulesFolder = RS:WaitForChild("Modules")
+
 -- Modules
-local MagicModule = require(RS.Modules.Magic)
-local MeleeModule = require(RS.Modules.Melee)
-local BasicModule = require(RS.Modules.Basic)
-local AttackClientModule = require(RS.Modules.AttackClient)
-local InventoryModule = require(RS.Modules.Inventory)
+local MagicModule = require(ModulesFolder.Magic)
+local MeleeModule = require(ModulesFolder.Melee)
+local BasicModule = require(ModulesFolder.Basic)
+local AttackClientModule = require(ModulesFolder.AttackClient)
+local InventoryModule = require(ModulesFolder.Inventory)
 
 -- State Variables
 local teleportDebounce = false
