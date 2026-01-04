@@ -8,8 +8,6 @@ local Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
 local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
 local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"))()
 
-loadstring(game:HttpGetAsync("https://pastebin.com/raw/97DsnzTt"), "Monsoon.lua")()
-
 local Version = "v1.0.0 [FREE]"
 
 -- Create Notification --
